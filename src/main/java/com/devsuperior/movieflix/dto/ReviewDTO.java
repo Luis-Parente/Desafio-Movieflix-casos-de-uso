@@ -7,31 +7,31 @@ import jakarta.validation.constraints.NotNull;
 
 public class ReviewDTO {
 
-    private Long id;
+	private Long id;
 
-    @NotBlank(message = "Campo requerido")
-    private String text;
+	@NotBlank(message = "Campo requerido")
+	private String text;
 
-    @NotNull(message = "Campo requerido")
-    private Long movieId;    
-    
-    private Long userId;
-    private String userName;
-    private String userEmail;
-    
-    public ReviewDTO() {
-    	
-    }
-    
-    public ReviewDTO(Review entity) {
-    	id = entity.getId();
-    	text = entity.getText();
-    	movieId = entity.getMovie().getId();
-    	userId = entity.getUser().getId();
-    	userName = entity.getUser().getName();
-    	userEmail = entity.getUser().getEmail();
-    }
-    
+	@NotNull(message = "Campo requerido")
+	private Long movieId;
+
+	private Long userId;
+	private String userName;
+	private String userEmail;
+
+	public ReviewDTO() {
+
+	}
+
+	public ReviewDTO(Review entity) {
+		id = entity.getId();
+		text = entity.getText();
+		movieId = entity.getMovie().getId();
+		userId = entity.getUser().getId();
+		userName = entity.getUser().getName();
+		userEmail = entity.getUser().getEmail();
+	}
+
 	public Long getId() {
 		return id;
 	}
